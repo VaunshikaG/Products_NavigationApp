@@ -12,12 +12,12 @@ import Details from './screens/Details';
 // type safety - typescript
 export type RootStackParamList = {
   Home: undefined;
-  Details: { productId: string };
+  Details: { product: Product };
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-function ProductNavigationApp() {
+function ProductApp() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
@@ -32,7 +32,7 @@ function ProductNavigationApp() {
           name="Details"
           component={Details}
           options={{
-            title: 'Product Details',
+            title: 'Product details',
           }}
         />
       </Stack.Navigator>
@@ -40,4 +40,4 @@ function ProductNavigationApp() {
   );
 }
 
-export default ProductNavigationApp;
+export default ProductApp;
