@@ -17,25 +17,27 @@ export type RootStackParamList = {
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-const ProductNavigation = () => {
-  <NavigationContainer>
-    <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen
-        name="Home"
-        component={Home}
-        options={{
-          title: 'Trending Products',
-        }}
-      />
-      <Stack.Screen
-        name="Details"
-        component={Details}
-        options={{
-          title: 'Product Details',
-        }}
-      />
-    </Stack.Navigator>
-  </NavigationContainer>;
-};
+function ProductNavigationApp() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            title: 'Trending Products',
+          }}
+        />
+        <Stack.Screen
+          name="Details"
+          component={Details}
+          options={{
+            title: 'Product Details',
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
 
-export default ProductNavigation;
+export default ProductNavigationApp;
